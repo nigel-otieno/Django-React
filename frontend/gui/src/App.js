@@ -2,17 +2,22 @@ import BaseRouter from "./routes";
 import { BrowserRouter as Router } from "react-router-dom";
 import "antd/dist/antd.css";
 import CustomLayout from "./containers/Layout";
+import { connect } from 'react-redux';
+import * as actions from './store/actions/auth'
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <CustomLayout>
-          <BaseRouter />
-        </CustomLayout>
-      </Router>
-    </div>
-  );
+
+class App extends Component {
+  render() { 
+    return ( 
+      <div>
+        <Router>
+          <CustomLayout >
+            <BaseRouter />
+          </CustomLayout>
+        </Router>
+      </div>
+     );
+  }
 }
-
-export default App;
+ 
+export default connect()(App);

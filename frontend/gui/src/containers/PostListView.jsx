@@ -21,9 +21,10 @@ class PostList extends React.Component {
       <div>
         <Posts data={this.state.posts} />
         <h2>Create a Post</h2>
-        <CustomForm />
+        <CustomForm requestType='post' btnText="Create" articleID={null}/>
       </div>
     )
   }
 }
 export default PostList;
+
