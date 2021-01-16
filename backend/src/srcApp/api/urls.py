@@ -1,8 +1,10 @@
-from srcApp.api.views import PostViewSet
+from srcApp.api.views import PostViewSet, UserViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register(r'', PostViewSet, basename='posts')
+router.register(r'', UserViewSet, basename='users')
+
 urlpatterns = router.urls
 
 

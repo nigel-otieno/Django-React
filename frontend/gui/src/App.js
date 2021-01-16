@@ -1,10 +1,9 @@
+import React, { Component } from 'react';
 import BaseRouter from "./routes";
 import { BrowserRouter as Router } from "react-router-dom";
 import "antd/dist/antd.css";
 import CustomLayout from "./containers/Layout";
-import { connect } from 'react-redux';
-import * as actions from './store/actions/auth'
-
+import Like from './components/Like'
 
 class App extends Component {
   render() { 
@@ -12,6 +11,7 @@ class App extends Component {
       <div>
         <Router>
           <CustomLayout >
+            <Like />
             <BaseRouter />
           </CustomLayout>
         </Router>
@@ -20,4 +20,4 @@ class App extends Component {
   }
 }
  
-export default connect()(App);
+export default App;
