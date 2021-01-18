@@ -28,7 +28,7 @@ class UserDetail extends React.Component {
         <CustomForm
           btnText="Update"
           requestType="put"
-          postID={this.props.match.params.userID}
+          userID={this.props.match.params.userID}
         ></CustomForm>
         <form onSubmit={this.handleUserDelete}>
           <button type="danger" htmltype="submit">
