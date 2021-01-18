@@ -1,14 +1,13 @@
 import React from "react";
-import Posts from "../components/Posts";
 import axios from "axios";
 import CustomForm from "../components/Form";
 
-class PostList extends React.Component {
+class UserList extends React.Component {
   state = {
-    posts: []
+    users: []
   };
   componentDidMount() {
-    axios.get("http://localhost:8000/api/posts/").then(res => {
+    axios.get("http://localhost:8000/api/users/").then(res => {
       console.log(res.data);
       this.setState({
         posts: res.data
@@ -19,11 +18,11 @@ class PostList extends React.Component {
   render() {
     return (
       <div>
-        <Posts data={this.state.posts} />
-        <h2>Create a Post</h2>
+        <Posts data={this.state.users} />
+        <h2>Create a Profile</h2>
         <CustomForm requestType="post" btnText="Create" articleID={null} />
       </div>
     );
   }
 }
-export default PostList;
+export default UserList;

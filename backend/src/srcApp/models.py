@@ -9,7 +9,6 @@ class User(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=20, default="")
-    avatar = models.CharField(max_length=20, default="")
     description = models.CharField(max_length=20, default="")
     def __str__(self):
         return self.title

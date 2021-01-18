@@ -3,12 +3,12 @@ import { Card } from "antd";
 import axios from "axios";
 import CustomForm from "../components/Form";
 
-class PostDetail extends React.Component {
+class UserDetail extends React.Component {
   state = {
-    posts: {}
+    users: {}
   };
   componentDidMount() {
-    const postID = this.props.match.params.postID;
+    const userID = this.props.match.params.userID;
     axios.get(`http://localhost:8000/api/posts/${postID}`).then(res => {
       this.setState({
         posts: res.data
@@ -16,21 +16,21 @@ class PostDetail extends React.Component {
       console.log(res.data);
     });
   }
-  handleDelete = event => {
-    const postID = this.props.match.params.postID;
-    axios.delete(`http://localhost:8000/api/posts/${postID}`);
+  handleUserDelete = event => {
+    const userID = this.props.match.params.userID;
+    axios.delete(`http://localhost:8000/api/users/${userID}`);
     this.props.history.push("/");
   };
   render() {
     return (
       <div>
-        <Card title={this.state.posts.title}></Card>
+        <Card username={this.state.users.username}></Card>
         <CustomForm
           btnText="Update"
           requestType="put"
-          postID={this.props.match.params.postID}
+          postID={this.props.match.params.userID}
         ></CustomForm>
-        <form onSubmit={this.handleDelete}>
+        <form onSubmit={this.handleUserDelete}>
           <button type="danger" htmltype="submit">
             Delete
           </button>
@@ -39,4 +39,4 @@ class PostDetail extends React.Component {
     );
   }
 }
-export default PostDetail;
+export default UserDetail;

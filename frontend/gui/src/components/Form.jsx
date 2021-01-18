@@ -11,6 +11,7 @@ class CustomForm extends React.Component {
   handleChange = (event) => {
     this.setState({...this.state.title, title: event.target.value})
     this.setState({...this.state.description, description: event.target.value})
+
   }
   
   handleFormSubmit = (event, requestType, postID) => {
@@ -23,14 +24,14 @@ class CustomForm extends React.Component {
       case 'post':
         return axios.post('http://localhost:8000/api/', {
           title: title,
-          description: description
+          description: description,
         })
         .then(res => console.log(res))
         .catch(error => console.log(error));
       case 'put':
         return axios.put(`http://localhost:8000/api/${postID}/`, {
           title: title,
-          description: description
+          description: description,
         })
         .then(res => console.log(res))
         .catch(error => console.log(error));
