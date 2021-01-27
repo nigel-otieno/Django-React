@@ -21,7 +21,7 @@ const CustomLayout = props => {
       </Header>
       <Content style={{ padding: "0 50px" }}>
         <Login />
-        {/* <div>{props.children}</div> */}
+        <div>{props.children}</div>
       </Content>
       <Footer style={{ textAlign: "center" }}>Foto</Footer>
     </Layout>

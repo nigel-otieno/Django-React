@@ -1,5 +1,4 @@
 from rest_framework import serializers
-
 from srcApp.models import Post, User
 
 class UserSerializer(serializers.ModelSerializer):
