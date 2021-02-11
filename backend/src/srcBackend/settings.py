@@ -128,14 +128,16 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
 }
 
 AUTH_USER_MODEL = 'srcApp.User'
 
-JWT_AUTH = {
-    # Authorization:Token xxx
-    'JWT_AUTH_HEADER_PREFIX': 'Token',
-}
+# JWT_AUTH = {
+#     # Authorization:Token xxx
+#     'JWT_AUTH_HEADER_PREFIX': 'Token',
+# }
 
 CORS_ORIGIN_ALLOW_ALL = True

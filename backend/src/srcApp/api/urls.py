@@ -9,10 +9,6 @@ urlpatterns = [
     path('register', registration_view, name="register")
 ]
 
-
-
-
-
 router = DefaultRouter()
 router.register(r'posts', PostViewSet, basename='posts')
 router.register(r'users', UserViewSet, basename='users')

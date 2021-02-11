@@ -61,7 +61,7 @@ class User(AbstractBaseUser):
 class Post(models.Model):
     title = models.CharField(max_length=120, default="")
     description = models.CharField(max_length=120, default="")
-    user = models.ForeignKey('srcApp.User', related_name="posts", on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     def __str__(self):
         return self.title
 
