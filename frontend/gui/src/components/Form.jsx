@@ -1,6 +1,8 @@
 import React from "react";
 import axios from 'axios';
 
+//Better naming conventions. Try to be specific about component names
+//What is this Form for? Login? Signup? whatever its for is what it should be called
 class CustomForm extends React.Component {
   constructor(props) {
     super(props);
