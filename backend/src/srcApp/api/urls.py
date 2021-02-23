@@ -1,5 +1,13 @@
 from srcApp.api.views import PostViewSet, UserViewSet
 from rest_framework.routers import DefaultRouter
+from django.urls import path 
+from srcApp.api.views import(registration_view)
+
+app_name = "srcApp"
+
+urlpatterns = [
+    path('register', registration_view, name="register")
+]
 
 router = DefaultRouter()
 router.register(r'posts', PostViewSet, basename='posts')
