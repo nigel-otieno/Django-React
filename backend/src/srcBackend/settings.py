@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'srcApp',
     'rest_framework',
     'corsheaders',
+    'rest_framework.authtoken',
+
 ]
 
 MIDDLEWARE = [
@@ -121,9 +123,21 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'
-    ]
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
 }
+
+AUTH_USER_MODEL = 'srcApp.User'
+
+# JWT_AUTH = {
+#     # Authorization:Token xxx
+#     'JWT_AUTH_HEADER_PREFIX': 'Token',
+# }
 
 CORS_ORIGIN_ALLOW_ALL = True
