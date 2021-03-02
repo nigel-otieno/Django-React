@@ -13,7 +13,6 @@ class CustomForm extends React.Component {
   handleChange = (event) => {
     this.setState({...this.state.title, title: event.target.value})
     this.setState({...this.state.description, description: event.target.value})
-
   }
   
   handleFormSubmit = (event, requestType, postID) => {
